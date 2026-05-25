@@ -1,0 +1,214 @@
+/* 
+Font Weights (from style-guide.md):
+    Outfit font weights: 400, 600, 700
+    Young Serif font weights: 400 
+*/
+
+/*Base styling */
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --line: hsl(30, 18%, 87%);
+    --text: hsl(30, 10%, 34%);
+    --title: hsl(24, 5%, 18%);
+    --subtitle: hsl(14, 45%, 36%);
+    --rose-dark: hsl(332, 51%, 32%);
+    --rose-light: hsl(330, 100%, 98%);
+    --sub-header-font-size: 1.75rem;
+    --background-color: hsl(30, 54%, 90%);
+}
+
+html {
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--white);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-weight: 400;
+}
+
+header, main, ol, ul:not(.preparation-time-list) {
+    width: 92.5%;
+    margin: 0 auto;
+}
+
+div.line.break {
+    width: 92.5%;
+    height: 1px;
+    background-color: var(--line);
+    margin: 1rem auto 0 auto;
+}
+
+/* List styling */
+
+li:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+li {
+    padding-left: 1.5rem;
+}
+
+li:last-child {
+    margin-bottom: 0rem;
+}
+
+/* Font weights */
+
+.bold {
+    font-weight: 600;
+}
+
+.extra-bold {
+    font-weight: 700;
+}
+
+/* Image section */
+
+img.recipe-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Header section */
+
+header h1 {
+    color: var(--title);
+    margin-top: 2rem;
+    font-size: 2.25rem;
+    font-family: 'Young Serif', serif;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+header p {
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* Preparation time section */
+
+div.preparation-time {
+    background-color: var(--rose-light);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 2rem auto;
+    gap: 1rem;
+}
+
+div.preparation-time h2 {
+    color: var(--rose-dark);
+    font-size: 1.25rem;
+}
+
+div.preparation-time li {
+    margin-left: 1rem;
+}
+
+div.preparation-time li::marker {
+    color: var(--rose-dark);
+    font-size: 0.875rem;
+}
+
+/* Ingredients section */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h2 {
+    color: var(--subtitle);
+    font-size: var(--sub-header-font-size);
+    font-family: 'Young Serif', serif;
+    letter-spacing: 0.05rem;
+}
+
+.ingredients-list li::marker {
+    color: var(--subtitle);
+    font-size: 0.875rem;
+}
+
+/* Instructions section */
+
+ol li::marker {
+    color: var(--subtitle);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Nutrition section */
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+tr:last-child td,
+tr:last-child th {
+    border-bottom: none;
+}
+
+td {
+    color: var(--subtitle);
+    text-align: left;
+    padding-right: 2rem;
+}
+
+th {
+    text-align: left;
+    padding-left: 2.5rem;
+}
+
+table {
+    margin-bottom: 1.5rem;
+}
+
+/* Desktop Design */
+
+@media (min-width: 1024px) {
+    header, main, img.recipe-image, div.line.break {
+        width: 600px;
+    }
+    body {
+        background-color: var(--background-color);
+        padding: 2rem 0;
+        height: auto;
+    }
+    .card {
+        background-color: var(--white);
+        padding: 2rem 2rem 0 2rem;
+        border-radius: 1.25rem;
+
+    }
+    img {
+        border-radius: 0.625rem;
+    }
+}
